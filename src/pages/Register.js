@@ -66,8 +66,20 @@ const Register = () => {
   const [nombre, setNombre] = useState("");
   const navigate = useNavigate();
 
+  const esClaveValida = (clave) => {
+    const tieneMayuscula = /[A-Z]/.test(clave);
+    const tieneNumero = /\d/.test(clave);
+    const tieneLongitud = clave.length >= 6;
+    return tieneMayuscula && tieneNumero && tieneLongitud;
+  };
+  
   const handleRegister = async (e) => {
     e.preventDefault();
+  
+    if (!esClaveValida(clave)) {
+      return alert("La contraseña debe tener al menos 6 caracteres, una mayúscula y un número.");
+    }
+  
     try {
       await createUserWithEmailAndPassword(auth, email, clave);
       await updateProfile(auth.currentUser, { displayName: nombre });
