@@ -1,0 +1,78 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía y fondo general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Contenedor general */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Títulos generales */
+h1, h2, h3 {
+  color: #f5c518;
+  margin-bottom: 1rem;
+}
+
+/* Enlaces */
+a {
+  color: #f5c518;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Botones globales */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  color: #aaa;
+}
+
+/* Inputs */
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #574400;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background-color: #1e1e1e;
+}

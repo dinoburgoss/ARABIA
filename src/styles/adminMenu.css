@@ -1,0 +1,118 @@
+.admin-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  
+  .admin-titulo {
+    color: #4FC3F7;
+    text-align: center;
+  }
+  
+  .categoria-header {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  
+  .categoria-boton {
+    background-color: #4FC3F7;
+    padding: 10px;
+    flex-grow: 1;
+    text-align: left;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  
+  .categoria-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+  }
+  
+  .btn-eliminar-cat {
+    background-color: #e53935;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  
+  .producto-card {
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #2c2c2c;
+  }
+  
+  .input-full {
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    padding: 8px;
+    color: #fff;
+    border-radius: 6px;
+  }
+  
+  .producto-imagen {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .extras-titulo {
+    color: #FACC15;
+    margin-top: 10px;
+  }
+  
+  .extra-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .extra-row input {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px;
+  }
+  
+  .btn-guardar {
+    padding: 8px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .agregar-section h3 {
+    color: #FACC15;
+    margin-top: 30px;
+  }
+  
+  .btn-crear {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4FC3F7;
+    color: #000;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  

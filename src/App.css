@@ -1,0 +1,113 @@
+/* Estilo general del fondo */
+.contenido-app {
+  background-color: #121212;
+  min-height: 100vh;
+  color: white;
+  padding-bottom: 120px;
+  position: relative;
+}
+
+/* Título del comercio con fuente Montserrat y glow */
+.titulo-comercio {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #00e5ff;
+  text-shadow:
+    0 0 5px #00e5ff,
+    0 0 10px #00e5ff,
+    0 0 20px #00e5ff,
+    0 0 30px rgba(0, 229, 255, 0.5);
+  padding-top: 90px;
+  margin-bottom: 30px;
+  animation: pulsoGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulsoGlow {
+  0% {
+    text-shadow:
+      0 0 5px #00e5ff,
+      0 0 10px #00e5ff,
+      0 0 20px #00e5ff,
+      0 0 30px rgba(0, 229, 255, 0.5);
+  }
+  50% {
+    text-shadow:
+      0 0 8px #00e5ff,
+      0 0 16px #00e5ff,
+      0 0 30px #00e5ff,
+      0 0 40px rgba(0, 229, 255, 0.7);
+  }
+  100% {
+    text-shadow:
+      0 0 5px #00e5ff,
+      0 0 10px #00e5ff,
+      0 0 20px #00e5ff,
+      0 0 30px rgba(0, 229, 255, 0.5);
+  }
+}
+
+/* Responsive para el título */
+@media (max-width: 768px) {
+  .titulo-comercio {
+    font-size: 2rem;
+    padding-top: 80px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Botón de engranaje para acceder al modo administrador */
+.btn-admin-fixed {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: #00e5ff;
+  color: #121212;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.btn-admin-fixed:hover {
+  background-color: #00c8e0;
+}
+
+/* Ocultar en móviles si no querés mostrarlo */
+@media (max-width: 768px) {
+  .btn-admin-fixed {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+.direccion-comercio {
+  font-size: 1rem;
+  text-align: center;
+  color: #ccc;
+  margin-top: -20px;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+}
+.footer-derechos {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}

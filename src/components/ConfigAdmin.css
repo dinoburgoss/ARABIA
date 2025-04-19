@@ -1,0 +1,70 @@
+/* ConfigAdmin.css */
+.config-container {
+    background-color: #1f1f1f;
+    color: #f0c040;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .config-titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #f8d060;
+    text-align: center;
+  }
+  
+  .config-campo {
+    margin-bottom: 18px;
+  }
+  
+  .config-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  .config-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .config-input::placeholder {
+    color: #bbb;
+  }
+  
+  .config-boton {
+    width: 100%;
+    padding: 12px;
+    background-color: #f0c040;
+    color: #1f1f1f;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .config-boton:hover {
+    background-color: #ffd65b;
+  }
+  
+  .config-boton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .config-mensaje {
+    margin-top: 15px;
+    text-align: center;
+    color: #fff;
+  }
+  

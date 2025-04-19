@@ -1,0 +1,112 @@
+.estado-local {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin: 1rem auto;
+    max-width: 600px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(245, 197, 24, 0.1);
+  }
+  
+  .estado-local h2 {
+    color: #f5c518;
+  }
+  
+  .estado-local h3 {
+    margin-top: 1rem;
+    color: #f5c518;
+  }
+  
+  .estado-local ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .estado-local li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #333;
+  }
+
+.tooltip-maps {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  display: inline-block;
+  z-index: 10;
+}
+
+.boton-ubicacion-maps {
+  font-size: 24px;
+  text-decoration: none;
+  background-color: #00e5ff;
+  color: #121212;
+  padding: 6px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.boton-ubicacion-maps:hover {
+  transform: scale(1.1);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  background-color: #00e5ff;
+  color: #121212;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 10px;
+  position: absolute;
+  z-index: 1;
+  top: 110%;
+  right: 0;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-maps:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+.boton-ubicacion-maps {
+  font-size: 24px;
+  text-decoration: none;
+  background-color: #00e5ff;
+  color: #121212;
+  padding: 10px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.boton-ubicacion-maps:hover {
+  background-color: #00c8e0;
+  transform: scale(1.1);
+}
+
+.boton-ubicacion-maps:active {
+  background-color: #00bcd4;
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .boton-ubicacion-maps {
+    font-size: 22px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+
+  

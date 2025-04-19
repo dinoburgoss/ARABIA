@@ -1,0 +1,221 @@
+/* Fuente moderna */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor general */
+.menu-contenedor {
+  padding: 2rem;
+  background-color: #1E1E1E;
+  color: #EAEAEA;
+  min-height: 100vh;
+}
+
+/* Título principal */
+.menu-titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4FC3F7;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Contenedor de filtros: ahora horizontal */
+.filtros-contenedor {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Botones de categoría */
+.filtro-toggle {
+  background-color: #2C2C2C;
+  color: #4FC3F7;
+  border: 1px solid #4FC3F7;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.filtro-toggle:hover {
+  background-color: #4FC3F7;
+  color: #0e0d0d;
+}
+
+/* Contenido desplegable de cada categoría */
+.filtro-contenido {
+  background-color: #292929;
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #4FC3F7;
+  margin-top: -0.5rem;
+  animation: desplegar 0.3s ease-in-out;
+}
+
+/* Animación de despliegue */
+@keyframes desplegar {
+  from {
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* Grid de productos */
+.productos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Tarjeta de producto */
+.producto-card {
+  background-color: #2C2C2C;
+  border: 1px solid #3A3A3A;
+  border-radius: 12px;
+  padding: 1.2rem;
+  width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Imagen del producto */
+.producto-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Línea divisora opcional para separar secciones dentro de la card */
+.producto-card hr {
+  border: 0;
+  height: 1px;
+  background: #3A3A3A;
+  margin: 0.8rem 0;
+}
+
+/* Precio */
+.precio {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #22c55e;
+  font-size: 1.1rem;
+}
+
+/* Botón agregar al carrito */
+.btn-agregar {
+  background-color: #4FC3F7;
+  color: #0e0d0d;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-agregar:hover {
+  background-color: #03A9F4;
+}
+
+/* Botones de extras */
+.extra-btn {
+  margin: 3px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #4FC3F7;
+  background-color: transparent;
+  color: #4FC3F7;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.extra-btn:hover {
+  background-color: rgba(79, 195, 247, 0.1);
+  color: #ffffff;
+}
+
+.extra-btn.activo {
+  background-color: #4FC3F7;
+  color: #ffffff;
+}
+
+/* Responsividad */
+@media (max-width: 500px) {
+  .producto-card {
+    width: 90%;
+  }
+
+  .menu-titulo {
+    font-size: 1.5rem;
+  }
+
+  .filtros-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .precio {
+    font-size: 1rem;
+  }
+
+  .btn-agregar {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+.btn-admin-fixed {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: #00e5ff;
+  color: #121212;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-admin-fixed:hover {
+  background-color: #00c8e0;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .btn-admin-fixed {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+  }
+}

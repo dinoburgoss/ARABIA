@@ -1,0 +1,30 @@
+{
+    "precios": {
+      "hamburguesa": 500,
+      "pizza": 700,
+      "bebida": 150
+    },
+    "horarios": {
+      "lunes_viernes": "09:00 - 22:00",
+      "sabado": "10:00 - 23:00",
+      "domingo": "Cerrado"
+    },
+    "contacto": {
+      "telefono": "+54 9 3876 123456",
+      "whatsapp": "https://wa.me/543876123456"
+    },
+    "banco": {
+      "alias": "bancoAlias",
+      "cbu": "123456789012345678901234",
+      "titular": "Juan Pérez"
+    },
+    "imagenes": {
+      "hamburguesa": "/imagenes/hamburguesa.jpg",
+      "pizza": "/imagenes/pizza.jpg"
+    },
+    "titulos": {
+      "hamburguesas": "Hamburguesas Deliciosas",
+      "bebidas": "Bebidas Refrescantes"
+    }
+  }
+  

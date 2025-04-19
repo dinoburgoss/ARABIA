@@ -1,0 +1,124 @@
+.formulario-container {
+    background-color: #1E1E1E;
+    padding: 30px;
+    border-radius: 12px;
+    color: #EAEAEA;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  h3 {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #EAEAEA;
+  }
+  
+  .formulario-input {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    background-color: #2C2C2C;
+    border: 1px solid #3A3A3A;
+    border-radius: 8px;
+    color: #EAEAEA;
+    font-size: 1rem;
+    transition: border 0.2s ease;
+  }
+  
+  .formulario-input:focus {
+    border-color: #4FC3F7;
+    outline: none;
+  }
+  
+  .formulario-boton {
+    width: 100%;
+    padding: 12px;
+    background-color: #4FC3F7;
+    color: #1E1E1E;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .formulario-boton:hover {
+    background-color: #29B6F6;
+  }
+  
+  .formulario-boton.secundaria {
+    background-color: #616161;
+    color: #EAEAEA;
+  }
+  
+  .formulario-boton.secundaria:hover {
+    background-color: #757575;
+  }
+  
+  .datos-transferencia {
+    background-color: #2C2C2C;
+    border: 1px solid #3A3A3A;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #EAEAEA;
+    font-size: 0.95rem;
+  }
+  
+  .resumen-pedido {
+    list-style: none;
+    padding: 15px;
+    background-color: #2C2C2C;
+    border: 1px solid #3A3A3A;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 0.95rem;
+  }
+  
+  .resumen-pedido li {
+    margin-bottom: 8px;
+  }
+  
+  .resumen-pedido .total-final {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #4FC3F7;
+    margin-top: 12px;
+  }
+  
+  .ubicacion-link {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #AAAAAA;
+  }
+  
+  .ubicacion-link a {
+    color: #81D4FA;
+    text-decoration: underline;
+  }
+  
+  .footer-form {
+    text-align: center;
+    margin-top: 40px;
+    color: #666;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 500px) {
+    .formulario-container {
+      padding: 20px;
+      font-size: 0.95rem;
+    }
+  
+    .formulario-boton {
+      font-size: 0.95rem;
+    }
+  
+    .datos-transferencia,
+    .resumen-pedido {
+      font-size: 0.9rem;
+    }
+  }
+  
