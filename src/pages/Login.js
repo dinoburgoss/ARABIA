@@ -1,14 +1,14 @@
-// src/pages/Login.js
-
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [clave, setClave] = useState("");
   const navigate = useNavigate();
+  const { loginConGoogle } = useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,19 +20,26 @@ const Login = () => {
     }
   };
 
-  const handleGoogle = async () => {
+  const handleLoginGoogle = async () => {
     try {
-      const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
+      await loginConGoogle();
       navigate("/");
     } catch (error) {
-      alert("Error con Google: " + error.message);
+      alert("Error al iniciar sesión con Google");
     }
   };
 
   return (
-    <div style={{ background: "#111", color: "#fff", padding: "30px", maxWidth: "400px", margin: "50px auto", borderRadius: "12px", boxShadow: "0 0 12px rgba(0,0,0,0.4)" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "20px", color: "#4ade80" }}>Iniciar Sesión</h2>
+    <div style={{
+      maxWidth: "400px",
+      margin: "50px auto",
+      background: "#111",
+      padding: "30px",
+      borderRadius: "10px",
+      color: "#fff",
+      boxShadow: "0 0 12px rgba(0,0,0,0.4)"
+    }}>
+      <h2 style={{ marginBottom: "20px", color: "#ffc107" }}>Iniciar sesión</h2>
 
       <form onSubmit={handleLogin}>
         <input
@@ -41,15 +48,7 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
-          style={{
-            width: "100%",
-            padding: "12px",
-            marginBottom: "12px",
-            borderRadius: "6px",
-            border: "1px solid #333",
-            background: "#1f1f1f",
-            color: "#fff"
-          }}
+          style={{ width: "100%", marginBottom: "10px", padding: "10px", borderRadius: "6px", border: "1px solid #333", background: "#1f1f1f", color: "#fff" }}
         />
 
         <input
@@ -58,63 +57,54 @@ const Login = () => {
           onChange={(e) => setClave(e.target.value)}
           placeholder="Contraseña"
           required
-          style={{
-            width: "100%",
-            padding: "12px",
-            marginBottom: "20px",
-            borderRadius: "6px",
-            border: "1px solid #333",
-            background: "#1f1f1f",
-            color: "#fff"
-          }}
+          style={{ width: "100%", marginBottom: "10px", padding: "10px", borderRadius: "6px", border: "1px solid #333", background: "#1f1f1f", color: "#fff" }}
         />
 
-        <button
-          type="submit"
-          style={{
-            width: "100%",
-            backgroundColor: "#22c55e",
-            color: "white",
-            padding: "12px",
-            borderRadius: "6px",
-            border: "none",
-            fontWeight: "bold",
-            cursor: "pointer",
-            marginBottom: "15px"
-          }}
-        >
-          Iniciar sesión
+        <button type="submit" style={{
+          width: "100%",
+          padding: "10px",
+          background: "#4FC3F7",
+          color: "#000",
+          fontWeight: "bold",
+          border: "none",
+          borderRadius: "6px",
+          marginBottom: "10px"
+        }}>
+          Ingresar
         </button>
       </form>
 
       <button
-        onClick={handleGoogle}
+        onClick={handleLoginGoogle}
         style={{
           width: "100%",
-          backgroundColor: "white",
-          color: "#333",
           padding: "10px",
+          background: "#fff",
+          color: "#000",
+          fontWeight: "bold",
+          border: "none",
           borderRadius: "6px",
-          border: "1px solid #ddd",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           gap: "8px",
-          fontWeight: "bold",
-          cursor: "pointer"
+          marginBottom: "10px"
         }}
       >
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
-          alt="Google"
-          style={{ width: "20px", height: "20px" }}
-        />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" width="20" />
         Iniciar sesión con Google
       </button>
 
-      <p style={{ marginTop: "15px", textAlign: "center" }}>
+      <p style={{ textAlign: "center", fontSize: "14px" }}>
+        ¿Olvidaste tu contraseña?{" "}
+        <Link to="/recuperar-clave" style={{ color: "#4FC3F7", fontWeight: "bold" }}>
+          Recuperarla
+        </Link>
+      </p>
+
+      <p style={{ textAlign: "center", fontSize: "14px", marginTop: "8px" }}>
         ¿No tenés cuenta?{" "}
-        <Link to="/register" style={{ color: "#4ade80", fontWeight: "bold" }}>
+        <Link to="/register" style={{ color: "#4FC3F7", fontWeight: "bold" }}>
           Registrate
         </Link>
       </p>
