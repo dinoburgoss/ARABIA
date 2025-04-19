@@ -4,6 +4,12 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { PedidoProvider } from './context/PedidoContext';
+import { AuthProvider } from './context/AuthContext';
+import RutaPrivada from './components/RutaPrivada';
+
+import Header from './components/Header';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import Menu from './components/Menu';
 import Carrito from './components/Carrito';
 import FormularioPedido from './components/FormularioPedido';
@@ -13,8 +19,9 @@ import ConfigAdmin from './components/ConfigAdmin';
 import AdminMenu from './components/AdminMenu';
 import ContactoCliente from './components/ContactoCliente';
 import AdminDashboard from './components/AdminDashboard';
-// import RedesSociales from './components/RedesSociales'; // ❌ Eliminado
 import Footer from './components/Footer';
+import TestFirebase from './TestFirebase';
+
 import { db } from './firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -62,29 +69,74 @@ function App() {
 
   return (
     <Router>
-      <PedidoProvider>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="contenido-app">
-                <h1 className="titulo-comercio">{nombreComercio || 'Bienvenidos'}</h1>
-                <EstadoLocal />
-                <Menu />
-                <Carrito />
-                <FormularioPedido />
-                <ContactoCliente />
-                {/* <RedesSociales /> ❌ Eliminado */}
-                <Footer />
-              </div>
-            }
-          />
-          <Route path="/admin" element={<AdminPanel />} />
-          <Route path="/admin/config" element={<ConfigAdmin />} />
-          <Route path="/admin/menu" element={<AdminMenu />} />
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        </Routes>
-      </PedidoProvider>
+      <AuthProvider>
+        <PedidoProvider>
+          <Routes>
+            {/* Rutas públicas */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
+            {/* Ruta protegida por login */}
+            <Route
+              path="/"
+              element={
+                <RutaPrivada>
+                  <div className="contenido-app">
+                    <Header />
+                    <h1 className="titulo-comercio">{nombreComercio || 'Bienvenidos'}</h1>
+                    <EstadoLocal />
+                    <Menu />
+                    <Carrito />
+                    <FormularioPedido />
+                    <ContactoCliente />
+                    <Footer />
+                  </div>
+                </RutaPrivada>
+              }
+            />
+
+            {/* Rutas admin protegidas por rol */}
+            <Route
+              path="/admin"
+              element={
+                <RutaPrivada soloAdmin>
+                  <AdminPanel />
+                </RutaPrivada>
+              }
+            />
+
+            <Route
+              path="/admin/config"
+              element={
+                <RutaPrivada soloAdmin>
+                  <ConfigAdmin />
+                </RutaPrivada>
+              }
+            />
+
+            <Route
+              path="/admin/menu"
+              element={
+                <RutaPrivada soloAdmin>
+                  <AdminMenu />
+                </RutaPrivada>
+              }
+            />
+
+            <Route
+              path="/admin/dashboard"
+              element={
+                <RutaPrivada soloAdmin>
+                  <AdminDashboard />
+                </RutaPrivada>
+              }
+            />
+
+            {/* Ruta de prueba */}
+            <Route path="/test" element={<TestFirebase />} />
+          </Routes>
+        </PedidoProvider>
+      </AuthProvider>
     </Router>
   );
 }

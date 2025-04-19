@@ -1,0 +1,79 @@
+/* Estilos del contenedor */
+.formulario-container {
+    background-color: #121212;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 40px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Título */
+  .formulario-container h2 {
+    color: #22c55e;
+    margin-bottom: 20px;
+  }
+  
+  /* Inputs */
+  .formulario-container input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  /* Botón principal */
+  .boton-principal {
+    width: 100%;
+    padding: 12px;
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s ease;
+  }
+  
+  .boton-principal:hover {
+    background-color: #16a34a;
+  }
+  
+  /* Botón de Google */
+  .boton-google {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: black;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .boton-google:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Imagen de Google */
+  .boton-google img {
+    height: 20px;
+    width: auto;
+  }
+  

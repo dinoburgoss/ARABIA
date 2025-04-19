@@ -45,14 +45,16 @@
   
   .carrito-boton {
     background-color: #4FC3F7;
-    color: #ffffff;
+    color: #000000;
+    font-weight: bold;        /* Negrita */
+    font-size: 20px;          /* Más grande */
     border: none;
     border-radius: 6px;
-    padding: 6px 12px;
-    font-size: 16px;
+    padding: 6px 14px;        /* Un poco más de espacio */
     cursor: pointer;
     transition: background-color 0.2s ease;
   }
+  
   
   .carrito-boton:hover {
     background-color: #03A9F4;
