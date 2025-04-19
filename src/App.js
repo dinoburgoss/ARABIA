@@ -10,6 +10,7 @@ import RutaPrivada from './components/RutaPrivada';
 import Header from './components/Header';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import RecuperarClave from './pages/RecuperarClave';
 import Menu from './components/Menu';
 import Carrito from './components/Carrito';
 import FormularioPedido from './components/FormularioPedido';
@@ -75,6 +76,7 @@ function App() {
             {/* Rutas públicas */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/recuperar-clave" element={<RecuperarClave />} />
 
             {/* Ruta protegida por login */}
             <Route
@@ -142,3 +144,4 @@ function App() {
 }
 
 export default App;
+
